@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>JS vjezba</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="prviZadatak">
+        <div class="forma1" id="prvaForma">
+          <form class="unosForme1">
+            <input type="text" class="ime" required placeholder="Ime" /><br />
+            <input
+              type="text"
+              class="prezime"
+              required
+              placeholder="Prezime"
+            /><br />
+            <input
+              type="number"
+              class="broj"
+              required
+              placeholder="Broj"
+            /><br />
+          </form>
+          <button class="submitForm" onclick="promijeniPozdrav()">
+            Submit
+          </button>
+        </div>
+        <aside>
+          <p class="ispis"></p>
+        </aside>
+      </section>
+      <section class="drugiZadatak">
+        <div class="drugaForma">
+          <h2>Unesi 5 HTML elemenata korištenih u izradi ove stranice</h2>
+          <form name="clanoviForm" id="drugaForma">
+            <input type="text" class="clan clan1" /><br />
+            <input type="text" class="clan clan2" /><br />
+            <input type="text" class="clan clan3" /><br />
+            <input type="text" class="clan clan4" /><br />
+            <input type="text" class="clan clan5" /><br />
+          </form>
+          <button class="clanoviBtn" onclick="unosClanova()">Submit</button>
+        </div>
+        <div class="ispisDiv">
+          <ol>
+            <p id="li"></p>
+          </ol>
+          <div class="ispisDiv2">
+            <p class="jedanIjedan"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p class="footerParagraph">Iva Filipović © <strong>2021</strong></p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

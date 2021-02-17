@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(241, 235, 235);
+  padding: 0 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+}
+
+header {
+  min-height: 10vh;
+  grid-row: 1 / span 1;
+}
+
+main {
+  min-height: 80vh;
+  grid-row: 2 / span 1;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+footer {
+  min-height: 5vh;
+  grid-row: 3 / span 1;
+  position: relative;
+  margin-top: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1.5em;
+  font-weight: 900;
+}
+
+section {
+  border: 5px solid rgb(168, 159, 159);
+  border-radius: 5px;
+}
+
+.footerParagraph {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*************
+*PRVI ZADATAK*
+*************/
+.prviZadatak {
+  overflow: auto;
+  margin: 1em 0;
+  background-color: rgb(200, 219, 155);
+  padding: 1em 0;
+  min-height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.forma1 {
+  margin: 0 auto 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  display: flex;
+}
+
+#haiku,
+#haiku2 {
+  min-width: 250px;
+  padding-bottom: 0.5em;
+}
+
+#haiku {
+  color: brown;
+  display: inline-block;
+  margin: auto;
+}
+
+#haiku2 {
+  color: darkblue;
+  display: inline-block;
+  margin: auto;
+}
+
+.ime,
+.prezime,
+.broj {
+  padding: 0.5em;
+  margin: 0.25em 0;
+  border-radius: 5px;
+}
+
+.submitForm,
+.clanoviBtn {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.submitForm {
+  align-self: center;
+}
+
+.ispis {
+  display: none;
+  width: 100%;
+  height: 50px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: fantasy;
+  font-size: 1.5em;
+  line-height: 1.8;
+}
+
+/*************
+*DRUGI ZADATAK*
+*************/
+
+.drugiZadatak {
+  background-color: rgb(207, 182, 231);
+  padding: 1em 0;
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drugaForma {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+h2 {
+  padding: 0 0.5em 0.25em 0.5em;
+  text-align: center;
+}
+
+.clan {
+  padding: 0.3em;
+  margin: 0.4em;
+  border-radius: 5px;
+}
+
+.ispisDiv {
+  min-width: 30%;
+  color: black;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+ul {
+  display: inline-block;
+  padding: 0.5em 2em;
+}
+
+li {
+  padding: 0.2em;
+  list-style: none;
+}
+
+.ispisDiv2 {
+  display: inline-block;
+}
+
+.jedanIjedan {
+  padding: 0.25em 0.5em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -20,7 +20,7 @@ function promijeniPozdrav() {
         var i= "PARAN broj";
     } else {
         var i = "NEPARAN broj";
-    }  
+      }  
 
     //ISPIS PRVE REČENICE 
     var ispis = document.querySelector(".ispis");
@@ -59,11 +59,8 @@ function promijeniPozdrav() {
     document.querySelector(".submitForm").style.cursor = "default";  
 
     clicked = true;
-
+    }
 }
-}
-
-
 
 
 /*********************************
@@ -75,7 +72,6 @@ var clicked2 = false;
 
 function unosClanova (sviClanovi) {     
     if (!clicked2) {
-       
        //KUPLJENJE ITEMA IZ FORME U HTMLcollection I KREIRANJE ul>li*i ITEMA U for PETLJI
        var colection = document.getElementsByClassName("clan");
        var ul = document.createElement('UL');
@@ -87,7 +83,7 @@ function unosClanova (sviClanovi) {
 
        /*PETLJA DA SE SVAKOM ITEMU IZ HTMLcollectiona UZME .value VRIJEDNOST 
        I UBACI U NOVOKREIRANI li ITEM*/
-       for (let i = 0; i < colection.length; i++) {
+        for (let i = 0; i < colection.length; i++) {
             let sviCLanovi = colection[i].value;
             console.log(sviCLanovi);
             
@@ -97,13 +93,12 @@ function unosClanova (sviClanovi) {
 
             //DODIJELJIVANJE .value VRIJEDNOSTI U li ITEM
             li.innerText = i + 1 + ". " + sviCLanovi;
-       }
-    
+        }
+
       //ISPIS REČENICE 1 i 1 nisu 2 već 11.
       var a = "1" + 1;
       document.querySelector(".jedanIjedan").innerHTML = `A jedan i jedan nisu 2 <br>\
                                                              već ${a}!!! ;))`;
-      
        //STIL ZA CURSOR NA BUTTONU
       document.querySelector(".clanoviBtn").style.cssText = "cursor: default";
       

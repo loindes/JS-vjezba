@@ -112,7 +112,7 @@ button {
 }
 
 .prviZadatak::before {
-  content: "1. zadatak";
+  content: "1. zadatak:";
 }
 
 .forma1 {
@@ -180,7 +180,7 @@ aside {
 }
 
 .drugiZadatak::before {
-  content: "2. zadatak";
+  content: "2. zadatak:";
 }
 
 .drugaForma {

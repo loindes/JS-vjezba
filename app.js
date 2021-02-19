@@ -1,116 +1,119 @@
-/****************
- * PRVI ZADATAK*
- ***************/
+/****************************
+*FUNKCIJA PROMIJENI POZDRAV*
+****************************/ 
 
-//PROMIJENI POZDRAV FUNKCIJA
+//varijabla za uvjet da se ne resetiraju unosi klikanjem buttona
+var clicked = false;
+
 function promijeniPozdrav() {
+    if (!clicked) {
+    //DOHVAĆA IME 
     let x = document.querySelector(".ime").value;    
 
-    // DATIV ZA PREZIME
-    let z = document.querySelector(".prezime").value;
-    let y = z + "a";
+    //DOHVAĆA PREZIME + DATIV  
+    let y = document.querySelector(".prezime").value;
+    y = y + "a";
     
-    // PAR-NEPAR
+    // PAR-NEPAR PROVJERA
     let q = document.querySelector(".broj").value;
     if (q%2 == 0) {
-        var i= "PARNI ";
+        var i= "PARAN broj";
     } else {
-        var i = "NEPARNI ";
-    }
-    
-    //STIL ZA UBAČENI p I PROMJENA GRID VRIJEDNOSTI ZA div
-    document.querySelector(".ispis").style.cssText = "text-align: center; display: block";
-    document.querySelector("aside").style.cssText = "margin: 0 auto";
+        var i = "NEPARAN broj";
+    }  
 
-
-    //ISPIS REČENICE 
+    //ISPIS PRVE REČENICE 
     var ispis = document.querySelector(".ispis");
     
-    ispis.innerText ="Gospodine " + x + ", ponosu "
-    + y + " gornjih, našeg slavnog kraja unijeli ste " + i + "broj.";
-
-
-    //KREIRA HAIKU CONTAINER
-    var container = document.createElement("DIV");
-    container.id = "continerIspisa";
-
-    //ubacuje container u .ispis i malo stila
-    ispis.appendChild(container);
-    document.getElementById("continerIspisa").style.cssText = "padding:0.5em;display:flex;flex-wrap:wrap;justify-content: space-between";
+    ispis.innerHTML = `Gospodine ${x}, ponosu ${y} gornjih, našeg slavnog kraja! <br>\
+                             Unijeli ste ${i}, a od JS-a ljude boli glava"`
     
+    //KREIRA I UBACUJE div CONTAINER u p.ispis ZA 2 "HAIKUA"
+    var container = document.createElement("DIV");
 
-    //KREIRA PRVI HAIKU PARAGRAF I UBACUJE GA U .continerIspisa
+    container.id = "continerIspisa";
+    ispis.appendChild(container);
+   
+    //KREIRA PRVI HAIKU p 
     var haiku = document.createElement("P");   
-    haiku.id = "haiku";     
-          
+   
+    haiku.id = "haiku";           
     haiku.innerHTML = 'Roses are red, <br>\
                       Violets are blue, <br> \
                    Unexpected "\{" at line 32!';    
-    document.getElementById("continerIspisa").appendChild(haiku);
 
-
-    //KREIRA DRUGI HAIKU PARAGRAF I UBACUJE GA U .continerIspisa
+    //KREIRA DRUGI HAIKU p I UBACUJE IH OBA U div CONTAINER
     var haiku2 = document.createElement("P");   
+
     haiku2.id = "haiku2";           
     haiku2.innerHTML = "Another error. <br>\
                    Hours of coding go by. <br> \
                      Compile and repeat.";    
-    document.getElementById("continerIspisa").appendChild(haiku2);
 
-    //POVEĆANJE max-height ATRIBUTA NA .prviZadatak
-    document.querySelector(".prviZadatak").style.cssText = "min-height: 50vh";
+    container.append(haiku, haiku2);
+
+    //DISPLAY:NONE > DISPLAY:BLOCK ZA p.ispis
+    document.querySelector(".ispis").style.display = "block";
+
+     //STIL ZA CURSOR NA BUTTONU 
+    document.querySelector(".submitForm").style.cursor = "default";  
+
+    clicked = true;
+
+}
 }
 
 
 
-/****************
- * DRUGI ZADATAK*
- ***************/
-var clicked = false;
 
-//ISPIŠI ČLANOVE
-function unosClanova (sviClanovi) { 
-    if (!clicked) {
-    var sviCLanovi = [];  //["", "", "", "", ""]
-    var clan1 = document.querySelector(".clan1").value;
-    var clan2 = document.querySelector(".clan2").value;
-    var clan3 = document.querySelector(".clan3").value;
-    var clan4 = document.querySelector(".clan4").value;
-    var clan5 = document.querySelector(".clan5").value;
+/*********************************
+*FUNKCIJA ISPIŠI ČLANOVE IZ FORME*
+**********************************/
+
+//varijabla za uvjet da se ne resetiraju unosi klikanjem buttona
+var clicked2 = false;
+
+function unosClanova (sviClanovi) {     
+    if (!clicked2) {
+       
+       //KUPLJENJE ITEMA IZ FORME U HTMLcollection I KREIRANJE ul>li*i ITEMA U for PETLJI
+       var colection = document.getElementsByClassName("clan");
+       var ul = document.createElement('UL');
+       console.log(colection);
+
+       ul.innerText ="Unijeli ste:";
+       var div = document.querySelector(".ispisDiv")
+       div.appendChild(ul);
+
+       /*PETLJA DA SE SVAKOM ITEMU IZ HTMLcollectiona UZME .value VRIJEDNOST 
+       I UBACI U NOVOKREIRANI li ITEM*/
+       for (let i = 0; i < colection.length; i++) {
+            let sviCLanovi = colection[i].value;
+            console.log(sviCLanovi);
+            
+            //KREIRANJE li ITEMA
+            let li = document.createElement('LI');
+            ul.appendChild(li);
+
+            //DODIJELJIVANJE .value VRIJEDNOSTI U li ITEM
+            li.innerText = i + 1 + ". " + sviCLanovi;
+       }
     
-    sviCLanovi.push(clan1, clan2, clan3, clan4, clan5);
-
-    //KREIRANJE LISTE ZA ISPIS ČLANOVA
-    var ul = document.createElement('ul');
-    var div = document.querySelector(".ispisDiv")
-
-    div.appendChild(ul);
-
-    //forEach ZA UNOS SVIH ČLANOVA NIZA U KREIRANI ul
-    sviCLanovi.forEach(function (item, index) {       
-    let li = document.createElement('li');
-    
-    ul.id = "listaClanova";
-    ul.appendChild(li);
-
-    li.innerHTML += index + 1 + ". " + item;
-    });
-   
-    //UNOS TEKSTA U p.jedanIjedan 
-    var a = "1";
-    var b = 1;
-
-    document.querySelector(".jedanIjedan").innerText = `Jedan i jedan nisu 2 već ${a}${b}!!!`;
-    
-    //zaustavljanje višestrukog klikanja
-    clicked = true;
-
-    console.log(sviCLanovi);
+      //ISPIS REČENICE 1 i 1 nisu 2 već 11.
+      var a = "1" + 1;
+      document.querySelector(".jedanIjedan").innerHTML = `A jedan i jedan nisu 2 <br>\
+                                                             već ${a}!!! ;))`;
+      
+       //STIL ZA CURSOR NA BUTTONU
+      document.querySelector(".clanoviBtn").style.cssText = "cursor: default";
+      
+      clicked2 = true;
     }
 }    
-     
+ 
 
-//polyfill for the append() method in Internet Explorer 9 and higher
+
+//polyfill for the append(haiku, haiku2) method in Internet Explorer 9 and higher
 // Source: https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
 (function (arr) {
     arr.forEach(function (item) {

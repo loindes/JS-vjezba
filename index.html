@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Iva Filipović" />
+    <meta name="keywords" content="JavaScript, CSS, HTML" />
+    <meta
+      name="description"
+      content="Prvenstveno JavaScript, ali i HTML/CSS vjezba"
+    />
     <link rel="stylesheet" href="style.css" />
-
+    <script src="app.js"></script>
     <title>JS vjezba</title>
   </head>
   <body>
@@ -14,22 +20,12 @@
     </header>
     <main>
       <section class="prviZadatak">
-        <h2>Haiku</h2>
-        <div class="forma1" id="prvaForma">
+        <h2>Haiku:</h2>
+        <div class="forma1">
           <form class="unosForme1">
             <input type="text" class="ime" placeholder="Ime" /><br />
-            <input
-              type="text"
-              class="prezime"
-              required
-              placeholder="Prezime"
-            /><br />
-            <input
-              type="number"
-              class="broj"
-              required
-              placeholder="Broj"
-            /><br />
+            <input type="text" class="prezime" placeholder="Prezime" /><br />
+            <input type="number" class="broj" placeholder="Broj" /><br />
           </form>
           <button class="submitForm" onclick="promijeniPozdrav()">
             Submit
@@ -41,13 +37,33 @@
       </section>
       <section class="drugiZadatak">
         <div class="drugaForma">
-          <h2>Unesi 5 HTML elemenata korištenih u izradi ove stranice</h2>
-          <form name="clanoviForm" id="drugaForma">
-            <input type="text" class="clan clan1" /><br />
-            <input type="text" class="clan clan2" /><br />
-            <input type="text" class="clan clan3" /><br />
-            <input type="text" class="clan clan4" /><br />
-            <input type="text" class="clan clan5" /><br />
+          <h2>Unesi 5 HTML elemenata korištenih u izradi ove stranice:</h2>
+          <form name="clanoviForm">
+            <input
+              type="text"
+              class="clan"
+              placeholder="HTML element..."
+            /><br />
+            <input
+              type="text"
+              class="clan"
+              placeholder="HTML element..."
+            /><br />
+            <input
+              type="text"
+              class="clan"
+              placeholder="HTML element..."
+            /><br />
+            <input
+              type="text"
+              class="clan"
+              placeholder="HTML element..."
+            /><br />
+            <input
+              type="text"
+              class="clan"
+              placeholder="HTML element..."
+            /><br />
           </form>
           <button class="clanoviBtn" onclick="unosClanova()">Submit</button>
         </div>
@@ -61,6 +77,5 @@
     <footer>
       <p class="footerParagraph">Iva Filipović © <strong>2021</strong></p>
     </footer>
-    <script src="app.js"></script>
   </body>
 </html>
